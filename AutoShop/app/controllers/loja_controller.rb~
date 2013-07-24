@@ -1,0 +1,7 @@
+class LojaController < ApplicationController
+  def principal
+		@anuncios = Anuncio.all
+		Anuncio.new
+	end
+
+end

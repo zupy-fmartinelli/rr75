@@ -1,0 +1,19 @@
+<h1>Loja#principal</h1>
+<p><%= notice %></p>
+
+<%= render partial: "anuncios/form" %>
+
+<table class="table table-striped">
+	<tr>
+		<th><i class="icon-home icon-big"></i>Modelo</th>
+		<th>Ano</th>
+		<th>Valor</th>
+		<th>Descrição</th>
+		<th></th>
+		<th></th>
+	</tr>
+
+	<%= render @anuncios %>
+
+</table>
+

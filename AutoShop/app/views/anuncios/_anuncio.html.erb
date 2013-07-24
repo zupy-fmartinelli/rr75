@@ -1,0 +1,17 @@
+<tr>
+		<td><i class="icon-thumbs-up"> </i><%= anuncio.modelo %></td>
+		<td><%= anuncio.ano %></td>
+		<td>
+<%= number_to_currency anuncio.valor,
+							delimiter: ".",
+							separator: ",",
+							unit: "R$ " %></td>
+		<td><%= anuncio.descricao %></td>
+		<td><i class="icon-edit"> </i><%= link_to "Editar", edit_anuncio_path(anuncio) %></td>
+		<td><i class="icon-trash"> </i>
+
+<%= link_to "Excluir", delete_anuncio_path(anuncio),
+ method: :delete,
+ data: { confirm: "Quer realmente excluir #{anuncio.modelo}?" } %></td>
+	</td>
+
