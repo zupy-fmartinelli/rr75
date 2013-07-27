@@ -1,4 +1,13 @@
+
+
 <tr>
+		<td>
+			<% if can?(:approve, anuncio) && !anuncio.aprovado %>
+				<%= link_to "Aprovar", approve_anuncio_path(anuncio),
+							method: :put,
+							:class => "label label-warning" %>
+				<% end %>
+			</td>
 		<td><i class="icon-thumbs-up"> </i><%= anuncio.modelo %></td>
 		<td><%= anuncio.ano %></td>
 		<td>
@@ -6,14 +15,25 @@
 							delimiter: ".",
 							separator: ",",
 							unit: "R$ " %></td>
-		<td><%= anuncio.descricao %></td>
-		<td><i class="icon-edit"> </i><%= link_to "Editar", edit_anuncio_path(anuncio) %></td>
+
+<td><%= anuncio.marca.nome && anuncio.marca %></td>
+
+
+		<td><%= anuncio.descricao %> <%= anuncio.anunciante.nome if anuncio.anunciante %></td>
+<% #if user_signed_in? #&& anuncio.anunciante == current_user %>
+<% if can? :anunciar, anuncio %>
+		<td>
+<i class="icon-edit"> </i>
+<% #if can? :anunciar, anuncio %>
+<%= link_to "Editar", edit_anuncio_path(anuncio) %></td>
+
 		<td><i class="icon-trash"> </i>
 
 <%= link_to "Excluir", delete_anuncio_path(anuncio),
  method: :delete,
- data: { confirm: "Quer realmente excluir #{anuncio.modelo}?" 
-
-											 %></td>
+ data: { confirm: "Quer realmente excluir #{anuncio.modelo}?" } %></td>
 	</td>
+<% end %>
+<% #end %>
+
 

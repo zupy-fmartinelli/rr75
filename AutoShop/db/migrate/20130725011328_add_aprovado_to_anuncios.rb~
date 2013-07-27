@@ -1,0 +1,6 @@
+class AddAprovadoToAnuncios < ActiveRecord::Migration
+  def change
+    add_column :anuncios, :aprovado, :boolean
+    add_index :anuncios, :aprovado
+  end
+end

@@ -1,0 +1,15 @@
+pt:
+  modelo: Modelito
+  ano: Idade do Carro
+  valor: Quantué
+  marca: Marca
+  descricao: U qui tem
+  anunciante: Anunciante
+
+  anuncios:
+   zero: Nenhum anúncio
+   one: 1 anúncio
+   other: '%{count} Anúncios'
+
+  idioma_portugues: Portugues
+  idioma_ingles: Ingles

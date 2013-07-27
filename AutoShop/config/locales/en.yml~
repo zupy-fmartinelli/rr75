@@ -1,0 +1,20 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  modelo: Model
+  ano: Year
+  valor: How Much
+  marca: Brand
+  descricao: Description
+  anunciante: Seller
+
+  anuncios:
+   zero: None
+   one: 1 for sale
+   other: '%{count} for sale'
+
+  
+  idioma_ingles:Ingles
+  idioma_portugues: Portugues

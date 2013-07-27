@@ -1,14 +1,25 @@
 <h1>Loja#principal</h1>
 <p><%= notice %></p>
+<p><%= alert %></p>
+<ul>
+	<li><%= link_to t(:idioma_portugues), "idioma/pt", method: "put" %></li>
+	<li><%= link_to t(:idioma_ingles), "idioma/en", method: "put"%></li>
+</ul>
 
-<%= render partial: "anuncios/form" %>
+<% if user_signed_in? %>
+<%= render partial: "anuncios/form", locals: {anuncio: anuncio} %>
+<% end %>
 
+<%= t :anuncios, count: @anuncios.size %>
 <table class="table table-striped">
 	<tr>
-		<th><i class="icon-home icon-big"></i>Modelo</th>
-		<th>Ano</th>
-		<th>Valor</th>
-		<th>Descrição</th>
+		<th><i class="icon-ok"></i></th>
+		<th><i class="icon-home icon-big"></i><%= t :modelo %></th>
+		<th><%= t :ano %></th>
+		<th><%= t :valor %></th>
+		<th><%= t :marca %></th>
+		<th><%= t :descricao %></th>
+		<th></th>
 		<th></th>
 	</tr>
 

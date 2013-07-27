@@ -1,11 +1,15 @@
 AutoShop::Application.routes.draw do
+  devise_for :users
+
   resources :anuncios, only: [:create, :edit, :update] do
 		member do
 			get :delete
 			delete "delete" => "anuncios#destroy"
+			put "approve" => "anuncios#approve"
 		end
 	end
 
+	put "idioma/:lingua" => "idiomas#update"
 
   get "loja/principal"
 	root to: "loja#principal"

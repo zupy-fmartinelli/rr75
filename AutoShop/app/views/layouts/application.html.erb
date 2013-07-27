@@ -32,7 +32,7 @@
 
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
-    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+    <%= favicon_link_tag  %>
   </head>
   <body>
 
@@ -51,7 +51,27 @@
               <li><%= link_to "Link2", "/path2"  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>
             </ul>
-          </div><!--/.nav-collapse -->
+<div class="nav-collapse collapse">
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+
+  Olá <%= current_user.nome %> <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+
+<% else %>
+
+  <%= link_to('Login', new_user_session_path)  %>  
+
+<% end %>
+</p>
+</div>
+
+
+          </div>
+
+
+
+
+<!--/.nav-collapse -->
         </div>
       </div>
     </div>

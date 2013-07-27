@@ -1,0 +1,1 @@
+<%= render_partial: "anuncios/form", locals: {anuncio: anuncio} %>
